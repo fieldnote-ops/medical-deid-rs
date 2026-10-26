@@ -1,0 +1,30 @@
+name: checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-15
+    env:
+      DEID_STORAGE_ROOT: ${{ runner.temp }}
+      DEID_REQUIRE_EXTERNAL: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare storage and toolchain
+        run: |
+          source scripts/env.sh
+          rustup show
+      - name: Format
+        run: bash scripts/cargo.sh fmt --all -- --check
+      - name: Rust tests
+        run: bash scripts/cargo.sh test --release --locked
+      - name: Clippy
+        run: bash scripts/cargo.sh clippy --release --all-targets --locked -- -D warnings
+      - name: Python tests and documentation
+        run: |
+          source scripts/env.sh
+          python3 -m unittest discover -s tests -v
+          python3 scripts/check_docs.py
+          for script in scripts/*.sh; do bash -n "$script"; done

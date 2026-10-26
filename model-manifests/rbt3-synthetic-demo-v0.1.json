@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "model_id": "rbt3-synthetic-demo-v0.1",
+  "runtime_version": "0.1.0",
+  "format": "burn-bpk-rbt3-token-classifier",
+  "license": "Apache-2.0",
+  "base_model": "hfl/rbt3",
+  "base_revision": "0aa0527ff4170f29e1dfd3eb6ef60dc67e1bf75c",
+  "offset_unit": "utf8_bytes_end_exclusive",
+  "files": {
+    "LICENSE": {
+      "bytes": 10851,
+      "sha256": "0a51c64b1ab7709a0c811db7bdbbc23f14b05c0a9eb6bb96ec463966c83f6808"
+    },
+    "MODEL_CARD.md": {
+      "bytes": 2714,
+      "sha256": "f2cd20734f6cbe0b84103bbac282cdd67213b7c1d2ba45cfd938cd93f0ac1902"
+    },
+    "NOTICE": {
+      "bytes": 214,
+      "sha256": "f111b4b869b966e945fd303e1a80316685014385398ad86e6499cfe4d01e7503"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2075,
+      "sha256": "4e7895dfa24c073db6108ce7ce9d2b194ef02409225a3bc04034386d2f00d23d"
+    },
+    "best.bpk": {
+      "bytes": 151596860,
+      "sha256": "0aaac3cb5e00330f0b4bb74aa31b511593eaa37273014ff01ee0485d751b984a"
+    },
+    "burn-config.json": {
+      "bytes": 902,
+      "sha256": "b26a5a4701046bc9a1635d787dde10834e4fff40fa7f2eba3afff7a89e033648"
+    },
+    "labels.json": {
+      "bytes": 196,
+      "sha256": "eba0f5131bb8547c30c389604c76de2570231a6c61f981eb48f29292b6eaccbf"
+    },
+    "licenses/bert-burn-MIT.txt": {
+      "bytes": 1084,
+      "sha256": "f63fdab7f763cf6a82641cbd4edaa046d170d163665ffa921188ac5aa0d7356c"
+    },
+    "licenses/dependency-index.json": {
+      "bytes": 226476,
+      "sha256": "5be4003c3b4d7d67f447540f613f01665e034242724268770d06e5320601e6ef"
+    },
+    "tokenizer.json": {
+      "bytes": 268961,
+      "sha256": "53ff61207898738bbdc000f38abebef01041c8d23b6270c11855fc692d0a3ad6"
+    }
+  },
+  "archive": {
+    "filename": "rbt3-synthetic-demo-v0.1.tar.gz",
+    "bytes": 140879282,
+    "sha256": "f9e8c630c8e537832a889aa23eb6a246450ca0cf52d4bb0c88dc1bb48c813258"
+  }
+}

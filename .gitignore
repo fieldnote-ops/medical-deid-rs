@@ -1,0 +1,14 @@
+/.deid.env
+/target/
+/.venv/
+/models/
+/runs/
+/dist/
+.DS_Store
+__pycache__/
+*.pyc
+*.bpk
+*.safetensors
+*.bin
+*.pt
+*.pth

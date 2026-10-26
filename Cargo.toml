@@ -1,0 +1,31 @@
+[package]
+name = "medical-deid-rs"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "Apache-2.0"
+rust-version = "1.99"
+description = "Local Chinese medical text redaction, training and evaluation CLI"
+
+[[bin]]
+name = "medical-deid"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+burn = { version = "=0.22.1", default-features = false, features = ["std", "optim", "metal", "flex", "store", "safetensors"] }
+bert-burn = { git = "https://github.com/tracel-ai/models", rev = "238983f9bf739358a74a6cee676eb754fc74b5bf", default-features = false }
+clap = { version = "4", features = ["derive"] }
+cubecl-runtime = "=0.11.3"
+rand = "0.9"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tokenizers = { version = "0.23", default-features = false, features = ["fancy-regex"] }
+
+[profile.dev]
+debug = 0
+
+[profile.release]
+debug = 0
