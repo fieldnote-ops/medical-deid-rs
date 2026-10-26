@@ -8,21 +8,30 @@ jobs:
   macos:
     runs-on: macos-15
     env:
-      DEID_STORAGE_ROOT: ${{ github.workspace }}/.deid-storage
       DEID_REQUIRE_EXTERNAL: "0"
     steps:
       - uses: actions/checkout@v4
       - name: Prepare storage and toolchain
+        env:
+          DEID_STORAGE_ROOT: ${{ runner.temp }}
         run: |
           source scripts/env.sh
           rustup show
       - name: Format
+        env:
+          DEID_STORAGE_ROOT: ${{ runner.temp }}
         run: bash scripts/cargo.sh fmt --all -- --check
       - name: Rust tests
+        env:
+          DEID_STORAGE_ROOT: ${{ runner.temp }}
         run: bash scripts/cargo.sh test --release --locked
       - name: Clippy
+        env:
+          DEID_STORAGE_ROOT: ${{ runner.temp }}
         run: bash scripts/cargo.sh clippy --release --all-targets --locked -- -D warnings
       - name: Python tests and documentation
+        env:
+          DEID_STORAGE_ROOT: ${{ runner.temp }}
         run: |
           source scripts/env.sh
           python3 -m unittest discover -s tests -v
