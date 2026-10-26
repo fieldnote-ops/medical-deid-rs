@@ -8,7 +8,7 @@ jobs:
   macos:
     runs-on: macos-15
     env:
-      DEID_STORAGE_ROOT: ${{ runner.temp }}
+      DEID_STORAGE_ROOT: ${{ github.workspace }}/.deid-storage
       DEID_REQUIRE_EXTERNAL: "0"
     steps:
       - uses: actions/checkout@v4
